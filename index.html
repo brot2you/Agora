@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Agora — l’école de la dialectique</title>
+<title>Agora — Académie du débat</title>
 <meta name="description" content="S’entraîner à argumenter, réfuter, débattre et penser dialectiquement. Une appli BROT2YOU.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -387,6 +387,45 @@ textarea:focus, input[type=text]:focus{ border-color:var(--lapis); outline:none;
   .steps li::before{ background:#000; color:#fff; box-shadow:none; }
   .prose{ box-shadow:none; }
 }
+
+/* =====================================================
+   AGORA — ACADEMY ADVENTURE / VISUAL REDESIGN
+   Existing learning engine and localStorage are unchanged.
+===================================================== */
+:root { --agora-navy:#073d5b; --agora-night:#052f4a; --agora-gold:#f6bd50; --agora-cream:#fff9eb; }
+body { background:#f7f0e4; background-image:radial-gradient(circle at 15% 10%,#fffdf5 0,transparent 38%),linear-gradient(180deg,#eaf5f6 0,#f8f0e5 440px,#f7f0e4 100%); }
+.topbar {background:linear-gradient(115deg,#033550,#065273 65%,#07334e);box-shadow:0 4px 20px #05304729;border-bottom:2px solid #d5a852;}
+.topbar-in{max-width:1180px;min-height:72px;padding:.75rem 1.3rem;}
+.brand b{color:#fff;font-family:Georgia,'Times New Roman',serif;font-size:2.1rem;letter-spacing:-.06em;text-shadow:0 2px 1px #082d44;}
+.brand span{color:#e8f2f6;font-family:Georgia,serif;max-width:none;font-size:.77rem;}
+.brand .logo{filter:drop-shadow(0 0 5px #eec56b);}
+.rankchip{background:#114e70;border:1px solid #80b7d0;box-shadow:inset 0 1px 0 #ffffff50,0 2px 4px #002a48;color:#fff;}
+.rankchip .lv{background:linear-gradient(#ffe594,#e9ab39);color:#402b08;}
+.iconbtn{background:#165474;box-shadow:none;color:#fff;border:1px solid #83b9cf;}
+.meander{background:linear-gradient(90deg,#c68c30,#f8d77d,#e2a640);height:7px;}
+main{max-width:1120px;padding:0 18px 7rem;}
+.academy-hero{height:290px;position:relative;margin:0 -18px 0;overflow:hidden;background:linear-gradient(160deg,#d9eaf3,#a6d5de);isolation:isolate;}
+.academy-backdrop{position:absolute;inset:0;background-image:url('assets/academie-paysage.webp');background-position:center 48%;background-size:cover;}
+.academy-hero:after{content:'';position:absolute;inset:auto 0 0;height:55px;background:linear-gradient(transparent,#f7f0e4);pointer-events:none;z-index:1;}
+.academy-owl{position:absolute;left:max(0px,calc((100vw - 1150px)/2));bottom:-12px;height:260px;width:auto;z-index:2;object-fit:contain;filter:drop-shadow(0 7px 7px #143b4a55);}
+.academy-greeting{position:absolute;left:clamp(180px,29%,310px);top:28px;max-width:435px;background:#fff8e9;z-index:2;border:2px solid #edd3a4;border-radius:27px;padding:17px 23px;box-shadow:0 8px 20px #3555704d;color:#102544;font-family:Georgia,serif;line-height:1.42;}
+.academy-greeting strong{display:block;font-size:clamp(1.07rem,2.6vw,1.45rem);margin-bottom:7px;}.academy-greeting span{font-size:clamp(.8rem,1.8vw,1.05rem)}
+.premium-topic{position:relative;z-index:3;margin:-20px 0 20px;background:linear-gradient(135deg,#fffdf4,#ffeed6);color:#11294c;padding:24px 32px 20px;border:3px solid white;border-radius:28px;box-shadow:0 6px 0 #d8bf93,0 12px 24px #3b4e5630;overflow:hidden;}
+.premium-topic:after{content:'❧';position:absolute;font-size:170px;opacity:.11;right:-13px;top:0;color:#b98933;pointer-events:none;}
+.topic-top{display:flex;justify-content:space-between}.gold-label{display:inline-flex;align-items:center;background:linear-gradient(#ffebad,#f5c767);color:#83510d;padding:5px 16px;border:1px solid #e8b354;border-radius:999px;font-family:Georgia,serif;font-weight:bold;letter-spacing:.055em;font-size:.82rem;}
+.topic-deco{font-size:2rem;color:#cda453;}.premium-topic h1{font-family:Georgia,'Times New Roman',serif;color:#0c294a;font-size:clamp(1.65rem,4.4vw,2.7rem);max-width:870px;margin:15px 0 16px;line-height:1.2;text-wrap:balance;}
+.topic-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}.topic-tags span{font-size:.75rem;border-radius:25px;background:#dbedf9;padding:5px 13px;color:#24577d;font-weight:bold;}.topic-tags span:nth-child(2){background:#d9f0dd;color:#2e7850}.topic-tags span:nth-child(3){background:#ffe1d6;color:#9a4939}
+.topic-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px}.premium-btn{position:relative;display:flex;align-items:center;gap:13px;min-width:0;min-height:76px;border-radius:20px;border:2px solid #fffbef;color:#fff;padding:12px 20px;text-align:left;cursor:pointer;box-shadow:0 4px 0 #8babc0,0 6px 14px #33496720;}.premium-btn.blue{background:linear-gradient(#198ad0,#09589e);box-shadow:0 4px 0 #063a78,0 8px 14px #08466d42}.premium-btn.red{background:linear-gradient(#ff7d60,#da4136);box-shadow:0 4px 0 #a62e24,0 8px 14px #633b3842}.premium-btn strong{font:700 clamp(1.1rem,2.7vw,1.6rem) Georgia,serif;display:block}.premium-btn small{font-size:.77rem;display:block;line-height:1.35;margin-top:3px}.premium-btn .btn-symbol{font-size:1.8rem}.premium-btn>span:last-child{margin-left:auto;font-size:2rem}.premium-btn:hover,.academy-tile:hover{transform:translateY(-2px)}.premium-btn:active,.academy-tile:active{transform:translateY(2px)}
+.topic-extra{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:17px}.quiet-action{background:#fff9ed;border:1px solid #e8d8b7;padding:8px 14px;border-radius:999px;color:#1a5272;font-weight:bold;cursor:pointer;font-size:.83rem}
+.premium-daily{display:flex;align-items:center;gap:18px;padding:16px 22px;margin:18px 2px 28px;border:2px solid #e8b65f;background:linear-gradient(100deg,#ffe3a1,#fff2d3,#ffe6b4);border-radius:24px;box-shadow:0 4px 0 #d5a259,0 10px 18px #4b412323;color:#132d50}.daily-emblem{font-size:2.4rem;color:#cb7130;text-shadow:0 2px #fff3ba}.daily-copy{flex:1;min-width:0}.daily-copy .eyebrow{font:700 .84rem Georgia,serif;color:#a76616;letter-spacing:.07em;display:block}.daily-copy strong{font:700 1.13rem Georgia,serif;display:block;margin:2px 0}.daily-copy small{color:#67553b}.daily-play{border:1px solid #cf8f32;background:linear-gradient(#fff8e8,#efc87a);border-radius:17px;color:#75420d;font-weight:700;padding:12px 21px;cursor:pointer;min-height:48px}.daily-complete{font-size:1.8rem;color:#317b4b}
+.premium-section-title{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:24px 6px 14px}.premium-section-title h2,.premium-progress h2,.academy-more h2{font:700 clamp(1.4rem,3vw,2rem) Georgia,serif;color:#102c53;margin:0}.premium-section-title>span{font:italic .85rem Georgia,serif;color:#547084}
+.academy-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:24px}.academy-tile{min-width:0;overflow:hidden;border-radius:18px;border:2px solid #fff;box-shadow:0 3px 0 #b8c8c5,0 7px 12px #334f5226;display:flex;flex-direction:column;text-align:center;cursor:pointer;padding:0;color:#123155;background:#d9edff;transition:transform .15s}.academy-tile.mint{background:#d7eee5}.academy-tile.honey{background:#ffedbd}.academy-tile.peach{background:#ffe0d5}.academy-tile.lavender{background:#ded9ff}.tile-art{display:block;width:100%;aspect-ratio:1/.96;object-fit:cover;object-position:center top}.tile-details{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;position:relative;padding:14px 8px 22px;min-height:122px;margin-top:-7px;border-radius:15px 15px 0 0;background:inherit;}.tile-details strong{font:700 clamp(.85rem,1.8vw,1.26rem) Georgia,serif;margin-bottom:6px;line-height:1.14}.tile-details small{font-size:clamp(.7rem,1.3vw,.86rem);line-height:1.25}.tile-arrow{position:absolute;right:8px;bottom:2px;font-size:1.45rem;color:#3981b5}
+.premium-progress{border:2px solid #fff;box-shadow:0 5px 0 #dac9b7,0 10px 20px #2e4e6130;border-radius:24px;background:linear-gradient(100deg,#fffbf6,#f9ecdc);padding:20px 24px;margin-bottom:25px;color:#183756}.progress-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}.progress-layout{display:flex;align-items:center;gap:23px}.progress-medal{width:104px;height:104px;flex:none;border-radius:50%;border:7px double #e9b848;background:radial-gradient(#fffef8,#e9e4d9);display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 4px 12px #bd933d55}.progress-medal strong{font:700 2.2rem Georgia,serif}.progress-medal small{font:700 .82rem Georgia,serif}.progress-center{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}.progress-center strong{font:700 1.25rem Georgia,serif}.progress-center span{font-size:.88rem}.progress-center small{font-style:italic}.progress-track{height:17px;background:#164967;border:2px solid #bad3d4;border-radius:22px;overflow:hidden}.progress-track i{display:block;height:100%;background:linear-gradient(#ffdf77,#eeb53e);border-radius:20px}.progress-badge{min-width:125px;max-width:175px;display:flex;align-items:center;gap:8px;flex-direction:column;text-align:center;background:#ffe7be;border-radius:17px;padding:12px}.badge-medal{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(#123e5c,#052840);border:5px solid #e3af47;color:#ffe7a6;font-size:2rem}.progress-badge small{font-weight:bold;font-family:Georgia,serif}
+.academy-more{margin:30px 0}.more-links{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}.more-links button{display:flex;align-items:center;justify-content:space-between;min-height:54px;background:#fffbf1;border:1px solid #e9d7b6;border-radius:13px;padding:12px 15px;color:#17445f;font-weight:bold;cursor:pointer}.more-links button span{font-size:1.5rem;color:#c68d2e}
+.nav{background:#063955!important;border-top:2px solid #bb964a!important}.nav button{color:#d6e9f1!important}.nav button.on{color:#ffcb5e!important}
+@media(max-width:740px){.topbar-in{min-height:60px;padding:.55rem .7rem}.brand b{font-size:1.7rem}.brand span{display:none}.academy-hero{height:245px}.academy-owl{height:206px;left:-18px}.academy-greeting{left:158px;right:10px;top:22px;padding:13px 15px;max-width:none}.premium-topic{padding:19px 17px}.academy-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:0 4px 15px 2px;scrollbar-width:thin}.academy-tile{flex:0 0 164px;scroll-snap-align:start}.tile-details strong{font-size:1rem}.tile-details small{font-size:.78rem}.progress-layout{gap:11px}.progress-medal{height:78px;width:78px}.progress-badge{min-width:85px}.badge-medal{width:50px;height:50px}}
+@media(max-width:420px){.academy-hero{height:220px}.academy-owl{height:165px;left:-23px}.academy-greeting{left:116px;top:16px;padding:11px;font-size:.87rem}.academy-greeting strong{font-size:1rem}.academy-greeting span{font-size:.77rem}.premium-topic h1{font-size:1.5rem}.topic-actions{grid-template-columns:1fr}.premium-btn{min-height:66px}.premium-daily{gap:9px;padding:12px}.daily-emblem{font-size:1.8rem}.daily-copy strong{font-size:.94rem}.daily-play{padding:8px 12px}.progress-badge{display:none}.progress-center strong{font-size:1rem}.premium-progress{padding:15px}.premium-section-title>span{font-size:.73rem}.more-links{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.academy-tile,.premium-btn{transition:none}}
 </style>
 </head>
 <body>
@@ -5628,24 +5667,28 @@ var homeSubject = null;
 function vHome(){
   if(!homeSubject){ homeSubject = dailySubject(); }
   var r = rankOf(S.xp), n = nextRank(S.xp);
-  var isDaily = homeSubject === dailySubject();
-  var h = '<div class="hello"><span class="owl">' + owl('happy') + '</span><div class="say"><strong>' + greeting() + '</strong>' + esc(homeMsg) + '</div></div>';
-  h += '<div class="lvl"><span class="medal-lv">' + level() + '</span><div style="flex:1"><strong style="font-family:var(--display);font-size:1.1rem">' + esc(r.n) + '</strong> <span class="small muted">' + S.xp + ' XP</span><div class="bar" style="margin:.35rem 0"><i style="width:' + rankProgress() + '%"></i></div><span class="small muted">' + (n ? 'Encore ' + (n.min - S.xp) + ' XP pour devenir ' + esc(n.n) : esc(r.d)) + '</span></div></div>';
-  h += '<div class="tablet"><span class="lbl">' + (isDaily ? 'Sujet du jour' : 'Sujet tiré au sort') + '</span>';
-  h += '<div class="subject">' + esc(homeSubject) + '</div>';
-  h += '<div class="row"><button class="btn" data-act="home-oral">' + IC.mic + ' Défendre à l’oral</button><button class="btn ochre" data-act="home-ecrit">' + IC.pen + ' Écrire un argument</button><button class="btn ghost" data-act="home-reroll">🎲 Autre sujet</button></div></div>';
-  var dDone = S.daily.last === today();
-  h += '<div class="daily"><span class="fl">' + (S.daily.streak ? '🔥' : '🎯') + '</span><div style="flex:1"><strong>Défi du jour</strong><span class="small muted">' + (dDone ? 'Fait aujourd’hui, ' + S.daily.score + '/5. ' : '5 questions express. ') + (S.daily.streak ? 'Série : ' + plural(S.daily.streak, 'jour') + '.' : 'Lance ta première série !') + '</span></div>' + (dDone ? '<span class="done-mark">✓</span>' : '<button class="btn coral sm" data-go="defi">Jouer</button>') + '</div>';
-  var sug = suggestion();
-  if(sug){ h += '<div class="tip"><b>Suggestion :</b> ' + sug.txt + ' <button class="btn sm" style="margin-left:.3rem" data-go="' + sug.go + '">' + esc(sug.btn) + '</button></div>'; }
-  h += '<h2><span class="em">🏛️</span>Les lieux de l’Agora</h2><ul class="places grid2">';
-  h += place('codex', IC.codex, 'Le Codex', 'Comprendre : dialectique, arguments, rhétorique, stratagèmes, manipulation.', countRead() + '/' + D.chapters.length + ' lus', '');
-  h += place('epreuves', IC.star, 'Les Épreuves', 'S’entraîner : quiz, jeux, dialogues avec Socrate, ateliers.', '', 'coral');
-  h += place('joute', IC.balance, 'L’Arène', 'Défendre un camp, puis l’autre, puis dépasser les deux.', plural(S.joutes, 'joute'), 'ochre');
-  h += place('classe', IC.people, 'Le Débat en classe', 'Deux équipes, phases chronométrées, points d’arbitrage.', '', 'purple');
-  h += place('sujets', IC.urn, 'L’Urne des sujets', D.sujets.length + ' sujets classés par thème et par niveau.', '', 'olive');
-  h += place('stratege', IC.star, 'Le jeu du stratège', 'Cartes secrètes : utilise une technique, fais-la deviner.', '', 'teal');
-  h += '</ul>';
+  var last = null;
+  for(var bi = 0; bi < D.badges.length; bi++){ if(S.badges[D.badges[bi].id]){ last = D.badges[bi]; } }
+  var subject = esc(homeSubject);
+  var h = '<section class="academy-hero" aria-label="Bienvenue dans l’Académie"><div class="academy-backdrop"></div><img class="academy-owl" src="assets/chouette-guide.png" alt="La chouette, guide de l’Académie"><div class="academy-greeting"><strong>' + greeting() + ' à Agora !</strong><span>Apprends à t’exprimer, à écouter, à réfuter et à penser par toi-même.</span></div></section>';
+  h += '<section class="premium-topic" aria-labelledby="topic-title"><div class="topic-top"><span class="gold-label">☼ &nbsp;' + (homeSubject === dailySubject() ? 'SUJET DU JOUR' : 'SUJET À EXPLORER') + '</span><span class="topic-deco" aria-hidden="true">❧</span></div>';
+  h += '<h1 id="topic-title">' + subject + '</h1><div class="topic-tags"><span>Argumentation</span><span>Esprit critique</span><span>Débat</span></div>';
+  h += '<div class="topic-actions"><button class="premium-btn blue" data-act="home-oral"><span class="btn-symbol">◈</span><span><strong>M’entraîner</strong><small>Défendre mon avis à l’oral</small></span><span aria-hidden="true">›</span></button><button class="premium-btn red" data-go="joute"><span class="btn-symbol">⚖</span><span><strong>Débattre</strong><small>Construire un raisonnement</small></span><span aria-hidden="true">›</span></button></div>';
+  h += '<div class="topic-extra"><button class="quiet-action" data-act="home-ecrit">✎ Écrire un argument</button><button class="quiet-action" data-act="home-reroll">↻ Changer de sujet</button></div></section>';
+  var done = S.daily.last === today();
+  h += '<section class="premium-daily"><div class="daily-emblem" aria-hidden="true">✦</div><div class="daily-copy"><span class="eyebrow">DÉFI DU JOUR</span><strong>' + (done ? 'Défi terminé ! Bravo !' : '5 questions pour aiguiser ton esprit critique !') + '</strong><small>' + (done ? 'Score : ' + S.daily.score + '/5' : (S.daily.streak ? 'Série en cours : ' + S.daily.streak + ' jours' : 'Commence ta première série')) + '</small></div>' + (done ? '<span class="daily-complete">✓</span>' : '<button class="daily-play" data-go="defi">Jouer <span aria-hidden="true">›</span></button>') + '</section>';
+  h += '<div class="premium-section-title"><h2>Explorer l’Académie</h2><span>5 espaces pour progresser</span></div><section class="academy-grid" aria-label="Les espaces de l’Académie">';
+  var areas = [
+    ['codex','academie','Académie','Apprendre les bases de l’argumentation','sky'],
+    ['sujets','bibliotheque','Bibliothèque','Explorer des sujets et des idées','mint'],
+    ['epreuves','temple','Temple des défis','S’entraîner, jouer, progresser','honey'],
+    ['joute','arene','Arène','Débattre et défendre ses idées','peach'],
+    ['progres','pantheon','Panthéon','Tes réussites et tes badges','lavender']
+  ];
+  for(var ai=0;ai<areas.length;ai++){var p=areas[ai];h+='<button class="academy-tile '+p[4]+'" data-go="'+p[0]+'"><img loading="lazy" src="assets/'+p[1]+'.webp" alt="" class="tile-art"><span class="tile-details"><strong>'+p[2]+'</strong><small>'+p[3]+'</small><span class="tile-arrow" aria-hidden="true">›</span></span></button>';}
+  h += '</section>';
+  h += '<section class="premium-progress"><div class="progress-head"><h2>Ton parcours</h2><button class="quiet-action" data-go="progres">Voir mes progrès ›</button></div><div class="progress-layout"><div class="progress-medal"><small>Niveau</small><strong>'+level()+'</strong></div><div class="progress-center"><strong>'+esc(r.n)+'</strong><span>'+S.xp+' XP'+(n?' · prochain rang à '+n.min+' XP':' · rang maximal')+'</span><div class="progress-track"><i style="width:'+rankProgress()+'%"></i></div><small>Chaque idée mérite d’être explorée !</small></div><div class="progress-badge"><span class="badge-medal">'+(last?last.e:'✦')+'</span><small>'+(last?esc(last.n):'Ton premier badge t’attend')+'</small></div></div></section>';
+  h += '<div class="academy-more"><h2>Poursuivre l’aventure</h2><div class="more-links"><button data-go="classe">Débat en classe <span>›</span></button><button data-go="stratege">Jeu du stratège <span>›</span></button><button data-go="atelier">Atelier d’argument <span>›</span></button><button data-go="refuter">Atelier de réfutation <span>›</span></button></div></div>';
   return h;
 }
 function place(go, icon, t, d, meta, cls){
