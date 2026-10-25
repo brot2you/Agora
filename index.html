@@ -546,6 +546,20 @@ h1,h2,h3,.premium-section-title h2,.premium-progress h2,.academy-more h2{color:#
   }
 }
 
+
+/* === 2026 correction patch v3 === */
+html,body{overflow-x:hidden !important;}
+main,.screen,.places,.nav,.topbar{overflow-x:hidden !important;max-width:100% !important;}
+.section-heading{display:block !important;}
+.section-icon{display:none !important;}
+.place,.premium-topic,.premium-daily,.premium-progress,.academy-more,.hello,.say,.codex-list button{max-width:100% !important;box-sizing:border-box !important;}
+.place{overflow:hidden !important;}
+.place .glyph{width:56px !important;height:56px !important;padding:8px !important;overflow:hidden !important;}
+.place .glyph img{transform:none !important;max-width:100% !important;max-height:100% !important;}
+@media(max-width:420px){
+  .place .glyph{width:54px !important;height:54px !important;padding:8px !important;}
+}
+
 </style>
 </head>
 <body>
@@ -5908,12 +5922,12 @@ function bestOf(kind){ var s = S.stats[kind], m = QUIZ_META[kind], n = m.n || 10
 function vEpreuves(){
   var nErr = errorKeys().length;
   var h = mascotBubble('Les Épreuves', 'Vise les trois étoiles partout ! Les explications comptent plus que le score.');
-  h += '<h2 class="section-heading"><img class="section-icon" src="assets/icons/ep-controller.png" alt="" aria-hidden="true">Jouer</h2><ul class="places grid2">';
+  h += '<h2>Jouer</h2><ul class="places grid2">';
   h += place('defi', EP_ICONS.star, 'Défi du jour', '5 questions, les mêmes pour tout le monde aujourd’hui. Prolonge ta série de jours.', S.daily.last === today() ? '✓ fait' : (S.daily.streak ? 'Série : ' + S.daily.streak : ''), 'coral');
   h += place('eclair', EP_ICONS.bolt, 'Défi éclair', 'Soixante secondes, un maximum de bonnes réponses.', S.stats.eclair ? 'Record ' + S.stats.eclair.best : '', 'coral');
   h += place('duel', EP_ICONS.duel, 'Le Duel', 'Deux joueurs sur un même appareil, réponse chacun son tour.', '', 'coral');
   if(nErr){ h += place('quiz/revision', EP_ICONS.star, 'Mes erreurs à revoir', 'Les questions manquées reviennent jusqu’à ce que tu les réussisses.', plural(nErr, 'erreur'), 'coral'); }
-  h += '</ul><h2 class="section-heading"><img class="section-icon" src="assets/icons/ep-search.png" alt="" aria-hidden="true">Reconnaître</h2><ul class="places grid2">';
+  h += '</ul><h2>Reconnaître</h2><ul class="places grid2">';
   h += place('quiz/sophismes', EP_ICONS.search, 'Chasse aux sophismes', 'Repère le piège caché dans chaque phrase.', bestOf('sophismes'), '');
   h += place('quiz/types', assetIcon('assets/icons/codex-puzzle.png','Types d’arguments'), 'Quel type d’argument ?', 'Exemple, autorité, analogie, valeurs… identifie la famille.', bestOf('types'), '');
   h += place('quiz/connecteurs', assetIcon('assets/icons/codex-chain.png','Connecteurs logiques'), 'Le bon connecteur', 'Choisis le mot qui articule correctement deux idées.', bestOf('connecteurs'), '');
@@ -5933,7 +5947,7 @@ function vEpreuves(){
   h += '</ul><h2><span class="em">🧠</span>Raisonner</h2><ul class="places grid2">';
   h += place('quiz/refutation', assetIcon('assets/icons/codex-shield.png','Réfutation express'), 'Réfutation express', 'Face à un adversaire, choisis la meilleure réponse.', bestOf('refutation'), 'teal');
   h += place('socrate', EP_ICONS.duel, 'Dialogues avec Socrate', 'Laisse-toi interroger, et affine ta pensée.', socDone() + '/' + D.socrate.length + ' terminés', 'teal');
-  h += '</ul><h2 class="section-heading"><img class="section-icon" src="assets/icons/ep-star.png" alt="" aria-hidden="true">Produire</h2><ul class="places grid2">';
+  h += '</ul><h2>Produire</h2><ul class="places grid2">';
   h += place('atelier', EP_ICONS.star, 'L’atelier d’argument', 'Écris un argument complet, et reçois une analyse détaillée.', S.stats.atelier ? 'Record ' + S.stats.atelier.best + '/100' : '', 'ochre');
   h += place('refuter', assetIcon('assets/icons/codex-shield.png','Atelier de réfutation'), 'L’atelier de réfutation', 'Réponds par écrit à un adversaire, en cinq gestes.', S.stats.refuter ? 'Record ' + S.stats.refuter.best + '/100' : '', 'ochre');
   h += place('joute', assetIcon('assets/icons/codex-scales.png','L’Arène'), 'L’Arène', 'Joute orale chronométrée : pour, contre, synthèse.', plural(S.joutes, 'joute'), 'ochre');
