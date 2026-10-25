@@ -426,12 +426,21 @@ main{max-width:1120px;padding:0 18px 7rem;}
 @media(max-width:740px){.topbar-in{min-height:60px;padding:.55rem .7rem}.brand b{font-size:1.7rem}.brand span{display:none}.academy-hero{height:245px}.academy-owl{height:206px;left:-18px}.academy-greeting{left:158px;right:10px;top:22px;padding:13px 15px;max-width:none}.premium-topic{padding:19px 17px}.academy-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:0 4px 15px 2px;scrollbar-width:thin}.academy-tile{flex:0 0 164px;scroll-snap-align:start}.tile-details strong{font-size:1rem}.tile-details small{font-size:.78rem}.progress-layout{gap:11px}.progress-medal{height:78px;width:78px}.progress-badge{min-width:85px}.badge-medal{width:50px;height:50px}}
 @media(max-width:420px){.academy-hero{height:220px}.academy-owl{height:165px;left:-23px}.academy-greeting{left:116px;top:16px;padding:11px;font-size:.87rem}.academy-greeting strong{font-size:1rem}.academy-greeting span{font-size:.77rem}.premium-topic h1{font-size:1.5rem}.topic-actions{grid-template-columns:1fr}.premium-btn{min-height:66px}.premium-daily{gap:9px;padding:12px}.daily-emblem{font-size:1.8rem}.daily-copy strong{font-size:.94rem}.daily-play{padding:8px 12px}.progress-badge{display:none}.progress-center strong{font-size:1rem}.premium-progress{padding:15px}.premium-section-title>span{font-size:.73rem}.more-links{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.academy-tile,.premium-btn{transition:none}}
+
+/* 2026 — ressources HD indépendantes, aucune découpe de la maquette */
+.agora-mark{display:block;width:46px;height:46px;object-fit:contain;flex:none;filter:drop-shadow(0 1px 2px #0004)}
+.academy-backdrop{background-position:center 50%;}
+.academy-owl{object-fit:contain;object-position:bottom left;max-width:none;}
+.academy-tile .tile-art{object-fit:cover;object-position:center 30%;aspect-ratio:4/4.35;}
+.badge-medal{background:#083657 url('assets/recompenses.webp') no-repeat !important;background-size:460% auto !important;background-position:69% 8% !important;color:transparent !important;border:3px solid #ddb057 !important;}
+@media(max-width:740px){.agora-mark{width:37px;height:37px}.academy-backdrop{background-position:47% center}.academy-tile .tile-art{aspect-ratio:4/4.3}}
+@media(max-width:420px){.academy-owl{left:-18px;bottom:-5px}.academy-greeting{left:125px;right:8px}}
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-in">
-    <button class="brand" data-go="home" aria-label="Accueil Agora"><span id="logo-owl" class="logo" aria-hidden="true"></span><b>Agora</b><span>l’école de la dialectique</span></button>
+    <button class="brand" data-go="home" aria-label="Accueil Agora"><img class="agora-mark" src="assets/agora-logo.webp" alt="" aria-hidden="true" width="47" height="47"><b>Agora</b><span>l’école de la dialectique</span></button>
     <div class="spacer"></div>
     <button class="rankchip" data-go="progres" id="rankchip" aria-label="Mon rang"></button>
     <button class="iconbtn" data-go="reglages" aria-label="Réglages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></button>
@@ -5687,7 +5696,7 @@ function vHome(){
   ];
   for(var ai=0;ai<areas.length;ai++){var p=areas[ai];h+='<button class="academy-tile '+p[4]+'" data-go="'+p[0]+'"><img loading="lazy" src="assets/'+p[1]+'.webp" alt="" class="tile-art"><span class="tile-details"><strong>'+p[2]+'</strong><small>'+p[3]+'</small><span class="tile-arrow" aria-hidden="true">›</span></span></button>';}
   h += '</section>';
-  h += '<section class="premium-progress"><div class="progress-head"><h2>Ton parcours</h2><button class="quiet-action" data-go="progres">Voir mes progrès ›</button></div><div class="progress-layout"><div class="progress-medal"><small>Niveau</small><strong>'+level()+'</strong></div><div class="progress-center"><strong>'+esc(r.n)+'</strong><span>'+S.xp+' XP'+(n?' · prochain rang à '+n.min+' XP':' · rang maximal')+'</span><div class="progress-track"><i style="width:'+rankProgress()+'%"></i></div><small>Chaque idée mérite d’être explorée !</small></div><div class="progress-badge"><span class="badge-medal">'+(last?last.e:'✦')+'</span><small>'+(last?esc(last.n):'Ton premier badge t’attend')+'</small></div></div></section>';
+  h += '<section class="premium-progress"><div class="progress-head"><h2>Ton parcours</h2><button class="quiet-action" data-go="progres">Voir mes progrès ›</button></div><div class="progress-layout"><div class="progress-medal"><small>Niveau</small><strong>'+level()+'</strong></div><div class="progress-center"><strong>'+esc(r.n)+'</strong><span>'+S.xp+' XP'+(n?' · prochain rang à '+n.min+' XP':' · rang maximal')+'</span><div class="progress-track"><i style="width:'+rankProgress()+'%"></i></div><small>Chaque idée mérite d’être explorée !</small></div><div class="progress-badge"><span class="badge-medal" aria-hidden="true"></span><small>'+(last?esc(last.n):'Ton premier badge t’attend')+'</small></div></div></section>';
   h += '<div class="academy-more"><h2>Poursuivre l’aventure</h2><div class="more-links"><button data-go="classe">Débat en classe <span>›</span></button><button data-go="stratege">Jeu du stratège <span>›</span></button><button data-go="atelier">Atelier d’argument <span>›</span></button><button data-go="refuter">Atelier de réfutation <span>›</span></button></div></div>';
   return h;
 }
